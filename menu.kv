@@ -1,0 +1,31 @@
+<MenuGrid>
+    list_menu:list_menu.__self__
+    MDToolbar:
+        id: toolbar
+        title:"Menu"
+        anchor_title:"center"
+        elevation: 10
+        md_bg_color: 1, .54,0,1
+        pos_hint:{"top":1}
+    ScreenManager:
+        Screen:
+            FloatLayout:
+                ScrollView:
+                    pos_hint:{"center_x":.5,"center_y":.38}
+                    MDList:
+                        padding:10
+                        #spacing:1
+                        id:list_menu
+                MDFloatingActionButton:
+                    pos_hint:{"center_x":.8,"center_y":.3}
+                    icon:"food"
+                MDFloatingActionButton:
+                    pos_hint:{"center_x":.8,"center_y":.2}
+                    icon:"coffee"
+                MDFloatingActionButton:
+                    pos_hint:{"center_x":.8,"center_y":.1}
+                    icon:"earth"
+                    on_release:
+                        root.fetch_api()
+
+
